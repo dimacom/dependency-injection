@@ -1,4 +1,4 @@
-package com.karpov.calculatorcon;
+package com.karpov.calculatorcon.Action;
 
 public class ActionSubtraction implements Action {
     @Override

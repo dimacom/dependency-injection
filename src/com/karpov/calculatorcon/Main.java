@@ -1,30 +1,13 @@
 package com.karpov.calculatorcon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.karpov.calculatorcon.Calculator.SelectOperator;
+import com.karpov.calculatorcon.Read.ReadConsole;
+import com.karpov.calculatorcon.Read.Reader;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        Calculator calculator = new Calculator();
-        String symbol = reader.readLine();
-        String[] split = symbol.split("");
-        if (split[1].equals("+")) {
-            calculator.setAction(new ActionAddition());
-        }
-        if (split[1].equals("-")) {
-            calculator.setAction(new ActionSubtraction());
-        }
-        if (split[1].equals("*")) {
-            calculator.setAction(new ActionMultiplication());
-        }
-        if (split[1].equals("/")) {
-            calculator.setAction(new ActionDivision());
-        }
-
-        Double a = Double.valueOf(split[0]);
-        Double b = Double.valueOf(split[2]);
-        System.out.println(calculator.executeAction(a, b));
+    public static void main(String[] args) {
+        Reader reader = new ReadConsole();
+        SelectOperator selectOperator = new SelectOperator();
+        selectOperator.getResult(reader.getLine());
     }
 }

@@ -1,11 +1,11 @@
-package com.karpov.calculatorcon;
+package com.karpov.calculatorcon.Action;
 
 public class ActionDivision implements Action {
     @Override
     public double execute(double a, double b) {
-        if (b == 0){
+        if (b == 0) {
             throw new IllegalArgumentException("division by zero is prohibited");
         }
-            return a / b;
+        return a / b;
     }
 }
